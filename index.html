@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electoral Webpage</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: left;
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }
+    h1 {
+        text-align: center;
+    }
+    #voteButton {
+        position: absolute;
+        top: 35%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: violet;
+        border: none;
+        color: white;
+    }
+    #voteButton2 {
+        position: absolute;
+        top: 45%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: green;
+        border: none;
+        color: white;
+    
+    }
+    #resultButton {
+        position: absolute;
+        bottom: 20%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: red;
+        border: none;
+        color: white;
+    }
+    #result {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+
+<h1>MSM English School Annual Elections</h1>
+<h2 style="position: absolute; top: 32%; left: 50%; transform: translate(-50%, -50%);">Om Sonone</h2>
+<button id="voteButton">Vote</button>
+<button id="voteButton2">Vote</button>
+<h2 style="position: absolute; top: 42%; left: 50%; transform: translate(-50%, -50%);">Vinay Rajput</h2>
+<button id="resultButton">Result</button>
+<div id="result"></div>
+
+<script>
+    // Get the button elements
+    var voteButton1 = document.getElementById('voteButton');
+    var voteButton2 = document.getElementById('voteButton2');
+    var resultButton = document.getElementById('resultButton');
+    // Initialize counters
+    var count1 = 0;
+    var count2 = 0;
+
+    // Function to update the counter for voteButton1
+    function updateCounter1() {
+        count1++;
+    }
+
+    // Function to update the counter for voteButton2
+    function updateCounter2() {
+        count2++;
+    }
+
+    // Event listener for voteButton1 click
+    voteButton1.addEventListener('click', function() {
+        updateCounter1();
+    });
+
+    // Event listener for voteButton2 click
+    voteButton2.addEventListener('click', function() {
+        updateCounter2();
+    });
+
+    // Event listener for result button click
+    resultButton.addEventListener('click', function() {
+        document.getElementById('result').textContent = 'Votes for Om Sonone:    ' + count1 + '\nVotes for Vinay Rajput:' + count2;
+    });
+</script>
+
+
+</body>
+</html>
